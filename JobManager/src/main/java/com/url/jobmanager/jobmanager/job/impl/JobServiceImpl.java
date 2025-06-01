@@ -29,4 +29,29 @@ public class JobServiceImpl implements JobService {
         }
         return null;
     }
+    @Override
+    public boolean deleteJob(long id) {
+        for(int i = 0; i < jobs.size(); i++){
+            if(jobs.get(i).getId() == id){
+                jobs.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateJob(Long id, Job updatedJob) {
+        for(Job job : jobs){
+            if(job.getId() == id){
+                job.setLocation(updatedJob.getLocation());
+                job.setMaxSalary(updatedJob.getMaxSalary());
+                job.setMinSalray(updatedJob.getMinSalray());
+                job.setTitle(updatedJob.getTitle());
+                job.setDescription(updatedJob.getDescription());
+                return true;
+            }
+        }
+        return false;
+    }
 }
