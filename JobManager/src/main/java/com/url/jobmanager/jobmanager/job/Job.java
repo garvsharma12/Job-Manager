@@ -1,13 +1,25 @@
 package com.url.jobmanager.jobmanager.job;
 
-public class Job {
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "job_table")
+public class Job{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Version
+    private Integer version;
+
     private String title;
     private String description;
     private String minSalray;
     private String maxSalary;
     private String location;
 
+    public Job() {
+
+    }
     public Job(String description, long id, String location, String maxSalary, String minSalray, String title) {
         this.description = description;
         this.id = id;
