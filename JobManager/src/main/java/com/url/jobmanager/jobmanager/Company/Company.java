@@ -1,6 +1,8 @@
 package com.url.jobmanager.jobmanager.Company;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.url.jobmanager.jobmanager.job.Job;
+import com.url.jobmanager.jobmanager.review.Review;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -26,6 +28,14 @@ public class Company {
         return id;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -46,8 +56,12 @@ public class Company {
         this.companyName = companyName;
     }
 
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(mappedBy="company")
     private List<Job> jobs;
+
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
     public Company() {
 

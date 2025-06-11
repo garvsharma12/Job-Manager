@@ -1,5 +1,6 @@
 package com.url.jobmanager.jobmanager.job;
 
+import com.url.jobmanager.jobmanager.Company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,16 @@ public class Job{
     private String maxSalary;
     private String location;
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    @ManyToOne
+    private Company company;
     public Job() {
 
     }
