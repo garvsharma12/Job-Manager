@@ -1,7 +1,6 @@
 # 🛠️ TaskMaster – Background Job Scheduling & Monitoring System
 
 **TaskMaster** is a robust, extensible, and production-ready **Spring Boot-based task management system** designed to schedule, execute, and monitor background jobs in enterprise-grade applications. It simplifies backend automation with support for **cron jobs**, **fixed delays**, **async execution**, **retries**, and **job status tracking**.
-
 ---
 
 ## 🚀 Features
@@ -39,7 +38,7 @@
 | **Concurrency** | Java ExecutorService, CompletableFuture |
 | **Monitoring** | Spring Actuator (optional), Custom Job Status APIs |
 | **DevOps** | Docker, Git, Maven |
-| **Security (Optional)** | Spring Security, JWT, Role-based access |
+| **Security** | Spring Security, JWT, Role-based access |
 
 ---
 
